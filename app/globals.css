@@ -9,3 +9,15 @@
 .features b {
     font-size: smaller;
 }
+
+.prices p {
+    font-size: smaller;
+    line-height: 1.5;
+}
+
+.prices ul {
+    list-style-type: disc;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}

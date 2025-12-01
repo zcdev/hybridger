@@ -32,10 +32,10 @@ function FeaturePreview({
 export default function Features({ featurePosts }: { featurePosts: any[]; }) {
     return (
         <section className="features">
-            <h2 className="mb-8 text-4xl leading-tight mt-10">
+            <h2 className="mb-8 text-4xl tracking-tight leading-tight mt-10">
                 Product Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-22">
                 {featurePosts.map((post) => (
                     <FeaturePreview
                         key={post.slug}
