@@ -15,7 +15,7 @@ function FeaturePreview({
     slug: string;
 }) {
     return (
-        <div>
+        <div className="mb-24">
             <div className="mb-5">
                 <CoverImage title={title} slug={slug} url={coverImage.url} />
             </div>

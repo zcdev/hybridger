@@ -36,20 +36,20 @@ export default async function PostPage({ params }: {
         <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
           {post.title}
         </h1>
-        <div className="hidden md:mb-12 md:block">
+        {/*         <div className="hidden md:mb-12 md:block">
           {post.author && (
             <Avatar name={post.author.name} picture={post.author.picture} />
           )}
-        </div>
+        </div> */}
         <div className="mb-8 sm:mx-0 md:mb-16">
           <CoverImage title={post.title} url={post.coverImage.url} />
         </div>
         <div className="mx-auto max-w-2xl">
-          <div className="mb-6 block md:hidden">
+          {/*           <div className="mb-6 block md:hidden">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
-          </div>
+          </div> */}
           <div className="mb-6 text-lg">
             <Date dateString={post.date} />
           </div>
