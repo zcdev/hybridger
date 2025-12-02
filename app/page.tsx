@@ -3,6 +3,7 @@ import CoverImage from "./cover-image";
 import { Markdown } from "@/lib/markdown";
 import Features from "./features";
 import Prices from "./prices";
+import Testimonials from "./testimonials";
 import { getAllPosts } from "@/lib/api";
 
 function HeroPost({
@@ -27,7 +28,7 @@ function HeroPost({
       <div className="mb-8 md:mb-12">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
-      <div className="text-2xl text-gray-600">
+      <div className="text-2xl text-gray-600 mb-24">
         <h3 className="text-3xl leading-tight text-indigo-700 mb-4">
           {title}
         </h3>
@@ -45,6 +46,10 @@ export default async function Page() {
     post.excerpt === "features").sort((a, b) => a.slug.split("-")[1] - b.slug.split("-")[1]);
   const pricePosts = allPosts.filter(post =>
     post.excerpt === "prices").sort((a, b) => a.slug.split("-")[1] - b.slug.split("-")[1]);
+  const testimonialPosts = allPosts.filter(post =>
+    post.excerpt === "testimonials").sort((a, b) => a.slug.split("-")[1] - b.slug.split("-")[1]);
+
+  console.log(testimonialPosts);
 
   return (
     <>
@@ -59,8 +64,11 @@ export default async function Page() {
           excerpt={heroPost.excerpt}
         />
       )}
+      <hr className="bg-accent-1 border-t border-accent-2" />
       <Features featurePosts={featurePosts} />
+      <hr className="bg-accent-1 border-t border-accent-2" />
       <Prices pricePosts={pricePosts} />
+      <Testimonials testimonialPosts={testimonialPosts} />
     </>
   );
 }
