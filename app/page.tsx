@@ -6,6 +6,8 @@ import Prices from "./prices";
 import Testimonials from "./testimonials";
 import { getAllPosts } from "@/lib/api";
 
+export const revalidate = 60;
+
 function HeroPost({
   title,
   coverImage,
@@ -48,8 +50,6 @@ export default async function Page() {
     post.excerpt === "prices").sort((a, b) => a.slug.split("-")[1] - b.slug.split("-")[1]);
   const testimonialPosts = allPosts.filter(post =>
     post.excerpt === "testimonials").sort((a, b) => a.slug.split("-")[1] - b.slug.split("-")[1]);
-
-  console.log(testimonialPosts);
 
   return (
     <>
