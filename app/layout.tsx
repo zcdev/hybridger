@@ -9,6 +9,11 @@ const inter = Inter({
   display: "swap",
 });
 
+export const metadata = {
+  title: "HyBridger CMS – Designer + Dev + AI",
+  description: "A modern headless CMS prototype built with Next.js & Contentful.",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -16,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
+      <body className="bg-white dark:bg-black">
         <section className="min-h-screen max-w-6xl mx-auto px-5">
           <Header />
           <main>{children}</main>
