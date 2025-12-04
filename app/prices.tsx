@@ -1,4 +1,4 @@
-import Icon from "./icon";
+import Graphic from "./graphic";
 import { Markdown } from "@/lib/markdown";
 
 function PricePreview({
@@ -16,7 +16,7 @@ function PricePreview({
 }) {
     return (
         <div className="text-xl md:text-2xl text-gray-600">
-            <Icon title={title} url={coverImage.url} />
+            <Graphic title={title} url={coverImage.url} />
             <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
                 {title}
             </h3>
@@ -31,7 +31,7 @@ export default function Prices({ pricePosts }: { pricePosts: any[]; }) {
             <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Pricing Tiers
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-20">
                 {pricePosts.map((post) => (
                     <PricePreview
                         key={post.slug}

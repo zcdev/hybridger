@@ -1,6 +1,6 @@
 import ContentfulImage from "@/lib/contentful-image";
 
-export default function Icon({
+export default function Graphic({
     title,
     url,
 }: {
@@ -10,19 +10,19 @@ export default function Icon({
     return (
         <>
             <ContentfulImage
-                className="block align-[-13px] mb-5 dark:hidden"
+                className="graphic block align-[-13px] mb-5 dark:hidden"
                 alt={`Icon Image for ${title}`}
-                height={45}
-                width={45}
+                height={50}
+                width={50}
                 src={url}
             />
-            <ContentfulImage
+            {/*             <ContentfulImage
                 className="hidden align-[-13px] mb-5 dark:block"
                 alt={`Icon Image for ${title}`}
                 height={45}
                 width={45}
                 src={url}
-            />
+            /> */}
         </>
     );
 }
