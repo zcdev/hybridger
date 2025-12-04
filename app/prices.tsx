@@ -1,4 +1,4 @@
-import ContentfulImage from "../lib/contentful-image";
+import Icon from "./icon";
 import { Markdown } from "@/lib/markdown";
 
 function PricePreview({
@@ -15,15 +15,9 @@ function PricePreview({
     slug: string;
 }) {
     return (
-        <div className="text-2xl text-gray-600">
-            <ContentfulImage
-                className="align-[-13px] mb-2"
-                alt={`Icon Image for ${title}`}
-                height={45}
-                width={45}
-                src={coverImage.url}
-            />
-            <h3 className="text-3xl leading-tight text-indigo-700 mb-2">
+        <div className="text-xl md:text-2xl text-gray-600">
+            <Icon title={title} url={coverImage.url} />
+            <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
                 {title}
             </h3>
             <Markdown content={content} />
@@ -34,10 +28,10 @@ function PricePreview({
 export default function Prices({ pricePosts }: { pricePosts: any[]; }) {
     return (
         <section className="prices">
-            <h2 className="mb-5 text-4xl tracking-tight leading-tight mt-10">
+            <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Pricing Tiers
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-24">
                 {pricePosts.map((post) => (
                     <PricePreview
                         key={post.slug}

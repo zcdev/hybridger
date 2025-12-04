@@ -4,6 +4,7 @@
 
 .features p {
     margin-bottom: 1rem;
+    line-height: 1.25;
 }
 
 .features b {
@@ -12,7 +13,7 @@
 
 .prices p {
     font-size: smaller;
-    line-height: 1.5;
+    line-height: 1.25;
 }
 
 .prices ul {
@@ -55,6 +56,16 @@
     animation-delay: 14s;
 }
 
+img {
+    width: auto;
+    height: auto;
+}
+
+.logo {
+    width: 50px;
+    height: 77px;
+}
+
 @keyframes slider {
     0%  { transform: translateY(240px); }
     10% { opacity: 1; transform: translateY(240px); }
@@ -63,4 +74,23 @@
     90% { opacity: 0; transform: translateY(-240px); }
     100% { transform: translateY(-240px); }
 }
+
+@layer base {
+    h1 {
+      @apply dark:text-white !important;
+    }
+    h2, h3 {
+      @apply dark:text-indigo-400 !important;
+    }
+    p {
+      @apply dark:text-white !important;
+    }
+    .slide h3 {
+      @apply dark:text-white !important;
+    }
+    .slide p {
+      @apply dark:text-gray-400 !important;
+    }
+  }
+  
   

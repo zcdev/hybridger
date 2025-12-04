@@ -27,11 +27,11 @@ function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-12">
+      <div className="mb-5 md:mb-12">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
-      <div className="text-2xl text-gray-600 mb-24">
-        <h3 className="text-3xl leading-tight text-indigo-700 mb-4">
+      <div className="text-xl md:text-2xl text-gray-600 mb-12 md:mb-24">
+        <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mb-5">
           {title}
         </h3>
         <Markdown content={content} />
