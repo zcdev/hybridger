@@ -81,7 +81,7 @@ img {
 }
 
 @layer base {
-    h1 {
+    h1, h4 {
       @apply dark:text-white !important;
     }
     h2, h3 {
