@@ -1,25 +1,7 @@
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-
-interface Asset {
-  sys: {
-    id: string;
-  };
-  url: string;
-  description: string;
-}
-
-interface AssetLink {
-  block: Asset[];
-}
-
-interface Content {
-  json: any;
-  links: {
-    assets: AssetLink;
-  };
-}
+import { Asset, Content } from './types';
 
 function RichTextAsset({
   id,
@@ -37,7 +19,7 @@ function RichTextAsset({
   return null;
 }
 
-export function Markdown({ content }: { content: Content }) {
+export function Markdown({ content }: { content: Content; }) {
   return documentToReactComponents(content.json, {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => (

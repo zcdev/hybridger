@@ -1,32 +1,4 @@
-const POST_GRAPHQL_FIELDS = `
-  slug
-  title
-  coverImage {
-    url
-  }
-  date
-  author {
-    name
-    picture {
-      url
-    }
-  }
-  excerpt
-  content {
-    json
-    links {
-      assets {
-        block {
-          sys {
-            id
-          }
-          url
-          description
-        }
-      }
-    }
-  }
-`;
+import { PricingCard, FeatureItem, Testimonial, Hero } from './types';
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
   return fetch(
@@ -36,8 +8,8 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
+          ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+          : process.env.CONTENTFUL_ACCESS_TOKEN
           }`,
       },
       body: JSON.stringify({ query }),
@@ -46,71 +18,110 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
   ).then((response) => response.json());
 }
 
-function extractPost(fetchResponse: any): any {
-  return fetchResponse?.data?.postCollection?.items?.[0];
-}
-
-function extractPostEntries(fetchResponse: any): any[] {
-  return fetchResponse?.data?.postCollection?.items;
-}
-
-export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
-  const entry = await fetchGraphQL(
+export async function getHero(): Promise<Hero[]> {
+  const query =
     `query {
-      postCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
+    heroSectionCollection(limit: 1) {
+      items {
+        coverImage {
+          url
+        }
+        title
+        content {
+          json
+          links {
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                description
+              }
+            }
+          }
         }
       }
-    }`,
-    true,
-  );
-  return extractPost(entry);
+    }
+  }`;
+  return (await fetchGraphQL(query)).data?.heroSectionCollection?.items;
 }
 
-export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(
+export async function getFeatureItems(): Promise<FeatureItem[]> {
+  const query =
     `query {
-      postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${isDraftMode ? "true" : "false"
-    }) {
+      featureItemCollection(limit: 6) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          coverImage {
+            url
+          }
+          title
+          subheader
+          content {
+            json
+            links {
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  url
+                  description
+                }
+              }
+            }
+          }
         }
       }
-    }`,
-    isDraftMode,
-  );
-  return extractPostEntries(entries);
+    }`;
+  return (await fetchGraphQL(query)).data?.featureItemCollection?.items;
 }
 
-export async function getPostAndMorePosts(
-  slug: string,
-  preview: boolean,
-): Promise<any> {
-  const entry = await fetchGraphQL(
+export async function getPriceCards(): Promise<PricingCard[]> {
+  const query =
     `query {
-      postCollection(where: { slug: "${slug}" }, preview: ${preview ? "true" : "false"
-    }, limit: 1) {
+      pricingCardCollection(limit: 3) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          iconLight {
+            url
+          }
+          iconDark {
+            url
+          }
+          title
+          subheader
+          content {
+            json
+            links {
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  url
+                  description
+                }
+              }
+            }
+          }
         }
       }
-    }`,
-    preview,
-  );
-  const entries = await fetchGraphQL(
+    }`;
+  return (await fetchGraphQL(query)).data?.pricingCardCollection?.items;
+}
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  const query =
     `query {
-      postCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${preview ? "true" : "false"
-    }, limit: 2) {
+      testimonialCollection(limit: 3) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          avatar {
+            url
+          }
+          title
+          author
         }
       }
-    }`,
-    preview,
-  );
-  return {
-    post: extractPost(entry),
-    morePosts: extractPostEntries(entries),
-  };
+    }`;
+  return (await fetchGraphQL(query)).data?.testimonialCollection?.items;
 }
