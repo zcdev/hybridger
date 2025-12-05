@@ -1,5 +1,4 @@
-import ContentfulImage from "../lib/contentful-image";
-import Logo from "./logo"
+import Logo from "./logo";
 
 export default function Header() {
     return (

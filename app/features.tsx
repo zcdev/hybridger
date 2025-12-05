@@ -1,23 +1,18 @@
 import CoverImage from "./cover-image";
 import { Markdown } from "@/lib/markdown";
+import { FeatureItem } from "@/lib/types";
+import { getFeatureItems } from "@/lib/api";
 
 function FeaturePreview({
-    title,
     coverImage,
+    title,
+    subheader,
     content,
-    excerpt,
-    slug,
-}: {
-    title: string;
-    coverImage: any;
-    content: any;
-    excerpt: string;
-    slug: string;
-}) {
+}: FeatureItem) {
     return (
         <div>
             <div className="mb-5">
-                <CoverImage title={title} slug={slug} url={coverImage.url} />
+                <CoverImage title={title} url={coverImage.url} />
             </div>
             <div className="text-xl md:text-2xl text-gray-600">
                 <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
@@ -29,21 +24,22 @@ function FeaturePreview({
     );
 }
 
-export default function Features({ featurePosts }: { featurePosts: any[]; }) {
+export default async function Features() {
+    const featureItems = await getFeatureItems();
+
     return (
         <section className="features">
             <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Product Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12 md:mb-20">
-                {featurePosts.map((post) => (
+                {featureItems.map(item => (
                     <FeaturePreview
-                        key={post.slug}
-                        title={post.title}
-                        coverImage={post.coverImage}
-                        content={post.content}
-                        slug={post.slug}
-                        excerpt={post.excerpt}
+                        key={item.title}
+                        coverImage={item.coverImage}
+                        title={item.title}
+                        subheader={item.subheader}
+                        content={item.content}
                     />
                 ))}
             </div>

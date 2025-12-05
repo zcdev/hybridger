@@ -1,31 +1,26 @@
 import Avatar from "./avatar";
-import { Markdown } from "@/lib/markdown";
+import { Testimonial } from "@/lib/types";
+import { getTestimonials } from "@/lib/api";
 
 function TestimonialPreview({
+    avatar,
     title,
-    author,
-    content,
-    excerpt,
-    slug,
-}: {
-    title: string;
-    author: any;
-    content: any;
-    excerpt: string;
-    slug: string;
-}) {
+    author
+}: Testimonial) {
     return (
         <div className="slide text-md md:text-2xl text-gray-600">
-            <Avatar picture={author.picture.url} />
+            <Avatar url={avatar.url} />
             <h3 className="text-lg md:text-3xl leading-tight text-indigo-700 mb-2">
                 {title}
             </h3>
-            <Markdown content={content} />
+            <p>{author}</p>
         </div>
     );
 }
 
-export default function Testimonials({ testimonialPosts }: { testimonialPosts: any[]; }) {
+export default async function Testimonials() {
+    const testimonials = await getTestimonials();
+
     return (
         <section className="testimonials bg-accent-1 border-t border-accent-2">
             <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
@@ -33,14 +28,12 @@ export default function Testimonials({ testimonialPosts }: { testimonialPosts: a
             </h2>
             <div className="slideshow mb-5">
                 <div className="slides grid grid-cols-1 mb-12 md:mb-24">
-                    {testimonialPosts.map((post) => (
+                    {testimonials.map(testimonial => (
                         <TestimonialPreview
-                            key={post.slug}
-                            title={post.title}
-                            author={post.author}
-                            content={post.content}
-                            slug={post.slug}
-                            excerpt={post.excerpt}
+                            key={testimonial.title}
+                            avatar={testimonial.avatar}
+                            title={testimonial.title}
+                            author={testimonial.author}
                         />
                     ))}
                 </div>
