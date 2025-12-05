@@ -1,17 +1,17 @@
-import CoverImage from "./cover-image";
+import ImageWrapper from "@/app/components/ui/image-wrapper";
 import { Markdown } from "@/lib/markdown";
 import { FeatureItem } from "@/lib/types";
 import { getFeatureItems } from "@/lib/api";
 
 function FeaturePreview({
-    coverImage,
+    imageAsset,
     title,
     subheader,
     content,
 }: FeatureItem) {
     return (
         <div className="text-xl md:text-2xl text-gray-600">
-            <CoverImage title={title} url={coverImage.url} />
+            <ImageWrapper src={imageAsset.url} width={453} height={255} alt="" />
             <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mt-5">
                 {title}
             </h3>
@@ -36,7 +36,7 @@ export default async function Features() {
                 {sortedFeatureItems.map(item => (
                     <FeaturePreview
                         key={item.id}
-                        coverImage={item.coverImage}
+                        imageAsset={item.imageAsset}
                         title={item.title}
                         subheader={item.subheader}
                         content={item.content}

@@ -20,7 +20,7 @@ export interface Content {
 }
 
 export interface Hero {
-    coverImage: {
+    imageAsset: {
         url: string;
     },
     title: string;
@@ -28,7 +28,7 @@ export interface Hero {
 }
 
 export interface FeatureItem {
-    coverImage: {
+    imageAsset: {
         url: string;
     },
     title: string;
@@ -58,3 +58,13 @@ export interface Testimonial {
     author: string;
     id?: number;
 }
+
+export type ImageWrapperProps = {
+    src: string;
+    srcDark?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+    className?: string;
+    wrapperClassName?: string;
+};

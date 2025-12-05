@@ -1,4 +1,4 @@
-import Avatar from "./avatar";
+import ImageWrapper from "../ui/image-wrapper";
 import { Testimonial } from "@/lib/types";
 import { getTestimonials } from "@/lib/api";
 
@@ -9,8 +9,8 @@ function TestimonialPreview({
 }: Testimonial) {
     return (
         <div className="slide text-md md:text-2xl text-gray-600">
-            <Avatar url={avatar.url} />
-            <h3 className="text-lg md:text-3xl leading-tight text-indigo-700 mb-2">
+            <ImageWrapper src={avatar.url} width={100} height={100} alt={author} className="headshot object-cover h-full rounded-full" />
+            <h3 className="pt-5 text-lg md:text-3xl leading-tight text-indigo-700 mb-2">
                 {title}
             </h3>
             <p>{author}</p>

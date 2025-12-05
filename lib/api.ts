@@ -23,7 +23,7 @@ export async function getHero(): Promise<Hero[]> {
     `query {
     heroSectionCollection(limit: 1) {
       items {
-        coverImage {
+        imageAsset {
           url
         }
         title
@@ -52,7 +52,7 @@ export async function getFeatureItems(): Promise<FeatureItem[]> {
     `query {
       featureItemCollection(limit: 6) {
         items {
-          coverImage {
+          imageAsset {
             url
           }
           id

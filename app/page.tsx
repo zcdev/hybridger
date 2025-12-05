@@ -1,9 +1,9 @@
-import Header from "./header";
-import HeroSection from "./hero";
-import Features from "./features";
-import Prices from "./prices";
-import Testimonials from "./testimonials";
-import Footer from "./footer";
+import Header from "./components/layout/header";
+import HeroSection from "./components/layout/hero";
+import Features from "./components/sections/features";
+import Prices from "./components/sections/prices";
+import Testimonials from "./components/sections/testimonials";
+import Footer from "./components/layout/footer";
 
 export const revalidate = 60;
 

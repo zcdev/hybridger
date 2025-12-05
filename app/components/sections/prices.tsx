@@ -1,4 +1,4 @@
-import Graphic from "./graphic";
+import ImageWrapper from "../ui/image-wrapper";
 import { Markdown } from "@/lib/markdown";
 import { PricingCard } from "@/lib/types";
 import { getPriceCards } from "@/lib/api";
@@ -12,7 +12,7 @@ function PricePreview({
 }: PricingCard) {
     return (
         <div className="text-xl md:text-2xl text-gray-600">
-            <Graphic title={title} srcLight={iconLight.url} srcDark={iconDark.url} />
+            <ImageWrapper src={iconLight.url} srcDark={iconDark.url} width={50} height={50} className="graphic" />
             <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
                 {title}
             </h3>
