@@ -55,6 +55,7 @@ export async function getFeatureItems(): Promise<FeatureItem[]> {
           coverImage {
             url
           }
+          id
           title
           subheader
           content {
@@ -88,6 +89,7 @@ export async function getPriceCards(): Promise<PricingCard[]> {
           iconDark {
             url
           }
+          id
           title
           subheader
           content {
@@ -118,6 +120,7 @@ export async function getTestimonials(): Promise<Testimonial[]> {
           avatar {
             url
           }
+          id
           title
           author
         }

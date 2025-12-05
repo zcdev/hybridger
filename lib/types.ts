@@ -34,6 +34,7 @@ export interface FeatureItem {
     title: string;
     subheader: string;
     content: Content;
+    id?: number;
 }
 
 export interface PricingCard {
@@ -46,6 +47,7 @@ export interface PricingCard {
     title: string;
     subheader: string;
     content: Content;
+    id?: number;
 }
 
 export interface Testimonial {
@@ -54,4 +56,5 @@ export interface Testimonial {
     },
     title: string;
     author: string;
+    id?: number;
 }
