@@ -8,12 +8,12 @@ export default function CoverImage({
   url: string;
 }) {
   return (
-    <div className="sm:mx-0">
+    <div className="hero sm:mx-0">
       <ContentfulImage
         alt={`Cover Image for ${title}`}
         priority
-        width={1100}
-        height={700}
+        width={1112}
+        height={450}
         src={url}
       />
     </div>
