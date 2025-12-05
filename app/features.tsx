@@ -18,6 +18,9 @@ function FeaturePreview({
                 <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
                     {title}
                 </h3>
+                <h4 className="text-xl font-bold">
+                    {subheader}
+                </h4>
                 <Markdown content={content} />
             </div>
         </div>
@@ -26,6 +29,7 @@ function FeaturePreview({
 
 export default async function Features() {
     const featureItems = await getFeatureItems();
+    const sortedFeatureItems = [...featureItems].sort((a, b) => a.id! - b.id!);
 
     return (
         <section className="features">
@@ -33,9 +37,9 @@ export default async function Features() {
                 Product Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12 md:mb-20">
-                {featureItems.map(item => (
+                {sortedFeatureItems.map(item => (
                     <FeaturePreview
-                        key={item.title}
+                        key={item.id}
                         coverImage={item.coverImage}
                         title={item.title}
                         subheader={item.subheader}

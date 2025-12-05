@@ -26,6 +26,7 @@ function PricePreview({
 
 export default async function Prices() {
     const priceCards = await getPriceCards();
+    const sortedPriceCards = [...priceCards].sort((a, b) => a.id! - b.id!);
 
     return (
         <section className="prices">
@@ -33,7 +34,7 @@ export default async function Prices() {
                 Pricing Tiers
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-20">
-                {priceCards.map(card => (
+                {sortedPriceCards.map(card => (
                     <PricePreview
                         key={card.title}
                         title={card.title}

@@ -20,6 +20,7 @@ function TestimonialPreview({
 
 export default async function Testimonials() {
     const testimonials = await getTestimonials();
+    const sortedTestimonials = [...testimonials].sort((a, b) => a.id! - b.id!);
 
     return (
         <section className="testimonials bg-accent-1 border-t border-accent-2">
@@ -28,7 +29,7 @@ export default async function Testimonials() {
             </h2>
             <div className="slideshow mb-5">
                 <div className="slides grid grid-cols-1 mb-12 md:mb-24">
-                    {testimonials.map(testimonial => (
+                    {sortedTestimonials.map(testimonial => (
                         <TestimonialPreview
                             key={testimonial.title}
                             avatar={testimonial.avatar}
