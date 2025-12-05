@@ -15,7 +15,7 @@ function HeroPreview({
                 <CoverImage title={title} url={coverImage.url} />
             </div>
             <div className="text-xl md:text-2xl text-gray-600 mb-12 md:mb-20">
-                <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mb-5">
+                <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mb-4">
                     {title}
                 </h3>
                 <Markdown content={content} />

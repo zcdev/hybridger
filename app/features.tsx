@@ -10,19 +10,15 @@ function FeaturePreview({
     content,
 }: FeatureItem) {
     return (
-        <div>
-            <div className="mb-5">
-                <CoverImage title={title} url={coverImage.url} />
-            </div>
-            <div className="text-xl md:text-2xl text-gray-600">
-                <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
-                    {title}
-                </h3>
-                <h4 className="text-xl font-bold">
-                    {subheader}
-                </h4>
-                <Markdown content={content} />
-            </div>
+        <div className="text-xl md:text-2xl text-gray-600">
+            <CoverImage title={title} url={coverImage.url} />
+            <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mt-5">
+                {title}
+            </h3>
+            <h4 className="text-xl font-bold">
+                {subheader}
+            </h4>
+            <Markdown content={content} />
         </div>
     );
 }
@@ -36,7 +32,7 @@ export default async function Features() {
             <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Product Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12 md:mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 mb-12 md:mb-20">
                 {sortedFeatureItems.map(item => (
                     <FeaturePreview
                         key={item.id}
