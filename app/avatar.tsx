@@ -1,9 +1,9 @@
 import ContentfulImage from "@/lib/contentful-image";
 
 export default function Avatar({
-  picture,
+  url,
 }: {
-  picture: any;
+  url: string;
 }) {
   return (
     <div className="flex items-center pb-5">
@@ -12,7 +12,7 @@ export default function Avatar({
         className="headshot object-cover h-full rounded-full"
         height={100}
         width={100}
-        src={picture}
+        src={url}
       />
     </div>
   );
