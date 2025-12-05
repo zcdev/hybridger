@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
 
 .features p {
     margin-top: 1rem;
@@ -87,19 +86,19 @@ img {
 
 @layer base {
     h1, h4 {
-      @apply dark:text-white !important;
+      @apply dark:text-white;
     }
     h2, h3 {
-      @apply dark:text-indigo-400 !important;
+      @apply dark:text-indigo-400;
     }
     p {
-      @apply dark:text-white !important;
+      @apply dark:text-white;
     }
     .slide h3 {
-      @apply dark:text-white !important;
+      @apply dark:text-white;
     }
     .slide p {
-      @apply dark:text-gray-400 !important;
+      @apply dark:text-gray-400;
     }
   }
   
