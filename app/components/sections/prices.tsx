@@ -13,7 +13,7 @@ function PricePreview({
     return (
         <div className="text-xl md:text-2xl text-gray-600">
             <ImageWrapper src={iconLight.url} srcDark={iconDark.url} width={50} height={50} className="graphic" />
-            <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700">
+            <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mt-2">
                 {title}
             </h3>
             <h4 className="text-xl font-bold">
@@ -30,7 +30,7 @@ export default async function Prices() {
 
     return (
         <section className="prices">
-            <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
+            <h2 className="mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Pricing Tiers
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-20">

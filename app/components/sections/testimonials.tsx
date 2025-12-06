@@ -8,12 +8,12 @@ function TestimonialPreview({
     author
 }: Testimonial) {
     return (
-        <div className="slide text-md md:text-2xl text-gray-600">
+        <div className="slide text-gray-600">
             <ImageWrapper src={avatar.url} width={100} height={100} alt={author} className="headshot object-cover h-full rounded-full" />
             <h3 className="pt-5 text-lg md:text-3xl leading-tight text-indigo-700 mb-2">
                 {title}
             </h3>
-            <p>{author}</p>
+            <p className="text-md md:text-xl">{author}</p>
         </div>
     );
 }
@@ -23,8 +23,8 @@ export default async function Testimonials() {
     const sortedTestimonials = [...testimonials].sort((a, b) => a.id! - b.id!);
 
     return (
-        <section className="testimonials bg-accent-1 border-t border-accent-2">
-            <h2 className="mb-2 md:mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
+        <section className="testimonials border-t-1 border-gray-300">
+            <h2 className="mb-5 text-3xl md:text-4xl tracking-tight leading-tight mt-5 md:mt-12">
                 Testimonials
             </h2>
             <div className="slideshow mb-5">

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight.css" layer(base);
 
 .features p {
     margin-top: 1rem;
@@ -84,22 +83,29 @@ img {
     100% { transform: translateY(-240px); }
 }
 
-@layer base {
-    h1, h4 {
-      @apply dark:text-white;
+@media (prefers-reduced-motion: reduce) {
+    .slideshow {
+        height: auto;
+    }
+    .slide {
+        animation: none;
+        position: relative;
+        top: auto;
+        opacity: 1;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    h1, p, .slide h3 {
+      color: white;
     }
     h2, h3 {
-      @apply dark:text-indigo-400;
+      color: #7c86ff;
     }
-    p {
-      @apply dark:text-white;
+    h4, .slide p {
+      color: #99a1af;
     }
-    .slide h3 {
-      @apply dark:text-white;
-    }
-    .slide p {
-      @apply dark:text-gray-400;
-    }
-  }
+}
   
   

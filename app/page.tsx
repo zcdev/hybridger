@@ -12,9 +12,9 @@ export default async function Page() {
     <>
       <Header />
       <HeroSection />
-      <hr className="bg-accent-1 border-t border-accent-2" />
+      <hr className="border-t-1 border-gray-300" />
       <Features />
-      <hr className="bg-accent-1 border-t border-accent-2" />
+      <hr className="border-t-1 border-gray-300" />
       <Prices />
       <Testimonials />
       <Footer />
