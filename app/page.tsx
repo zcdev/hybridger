@@ -4,6 +4,7 @@ import Features from "./components/sections/features";
 import Prices from "./components/sections/prices";
 import Testimonials from "./components/sections/testimonials";
 import Footer from "./components/layout/footer";
+import Chatbot from "./components/chatbot/chatbot";
 
 export const revalidate = 60;
 
@@ -18,6 +19,7 @@ export default async function Page() {
       <Prices />
       <Testimonials />
       <Footer />
+      <Chatbot />
     </>
   );
 }
