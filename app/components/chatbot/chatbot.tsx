@@ -7,11 +7,11 @@ export default function Chatbot() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-5 right-0 z-50 dark:text-white">
+        <div className="fixed bottom-5 right-0 md:right-5 z-50 dark:text-white">
             {open ? (
                 <ChatWindow onClose={() => setOpen(false)} />
             ) : (
-                <div className="px-5">
+                <div className="px-5 md:px-2">
                     <button
                         onClick={() => setOpen(true)}
                         className="rounded-full px-2 py-3 bg-indigo-600 text-white shadow-lg w-[70px] h-[70px]"

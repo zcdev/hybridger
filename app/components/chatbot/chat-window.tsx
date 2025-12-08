@@ -72,7 +72,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     const isOptionStep = current?.from === "user-option";
 
     return (
-        <div className="w-full min-w-[320px] max-w-[320px] h-auto max-h-140 bg-white dark:bg-neutral-900 shadow-xl rounded-xl flex flex-col">
+        <div className="w-full min-w-[320px] max-w-[320px] h-auto max-h-140 bg-white dark:bg-neutral-900 shadow-xl rounded-xl flex flex-col border border-gray-200">
 
             {/* Header */}
             <ChatHeader onClose={onClose} />
