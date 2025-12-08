@@ -7,7 +7,7 @@ export default function Chatbot() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-5 right-0 md:right-5 z-50 dark:text-white">
+        <div className="fixed bottom-0 md:bottom-5 right-0 md:right-5 z-50 dark:text-white">
             {open ? (
                 <ChatWindow onClose={() => setOpen(false)} />
             ) : (
