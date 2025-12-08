@@ -2,11 +2,8 @@ import { OptionButtonsProps } from "@/lib/types";
 
 export default function OptionButtons({ current, onClick }: OptionButtonsProps) {
 
-    // Checking current step: placehold for now
-    console.log("option", current);
-
     return (
-        <div className="p-3 border-t space-y-2 dark:border-neutral-700">
+        <div className="p-3 space-y-2">
             {current.options.map((opt: string) => (
                 <button
                     key={opt}

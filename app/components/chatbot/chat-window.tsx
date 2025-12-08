@@ -6,8 +6,6 @@ import ChatInput from "./chat-input";
 import OptionButtons from "./option-buttons";
 import { chatScript } from "@/lib/chatscript";
 
-// const randomDelay = () => 600 + Math.random() * 600;
-
 export default function ChatWindow({ onClose }: ChatWindowProps) {
 
     const [step, setStep] = useState(0);
@@ -24,22 +22,42 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     }, [messages, isThinking]);
 
     const current = chatScript[step];
+
     // Script progression
     useEffect(() => {
+
         if (!current) return;
 
         if (current.from === "bot") {
+
+            setIsThinking(true); // Show thinking bubble
+
+            const timeDelay = setTimeout(() => {
+                setMessages(prev => [...prev, { from: "bot", text: current.text }]); // Insert the bot message inside the timeout so React's Strict Mode
+                // won't add it twice on the initial mount (cleanup cancels the first run).
+
+                setIsThinking(false);
+                setStep(prev => prev + 1);
+            }, 2500);
+
+            // Clean up function
+            return () => clearTimeout(timeDelay);
+        } else {
+            // Stop and hold until user input
             setIsThinking(false);
-            setMessages(prev => [...prev, { from: "bot", text: current.text }]);
-            setStep(prev => prev + 1);
         }
         // If it's a user-option step → UI waits for click
-    }, [step]);
+
+    }, [step]); // Run when step progresses
 
     // Unified user handler
     function handleUserResponse(userText: string) {
         setMessages(prev => [...prev, { from: "user", text: userText }]);
-        setStep(prev => prev + 1);
+        setIsThinking(true);
+        setTimeout(() => {
+            setIsThinking(false);
+            setStep(prev => prev + 1);
+        }, 2500);
     }
 
     // Input submission
@@ -53,17 +71,14 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
 
     const isOptionStep = current?.from === "user-option";
 
-    // Checking current step: placehold for now
-    console.log(current);
-
     return (
-        <div className="w-80 h-96 bg-white dark:bg-neutral-900 shadow-xl rounded-xl flex flex-col">
+        <div className="w-full min-w-[320px] max-w-[320px] h-auto max-h-140 bg-white dark:bg-neutral-900 shadow-xl rounded-xl flex flex-col">
 
             {/* Header */}
             <ChatHeader onClose={onClose} />
 
             {/* Messages */}
-            <Messages messages={messages} ref={ref} />
+            <Messages messages={messages} ref={ref} isThinking={isThinking} />
 
             {/* Fake Input */}
             <div className="p-3 border-t">

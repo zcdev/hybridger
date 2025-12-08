@@ -8,9 +8,13 @@ export const chatScript = [
 
     { from: "bot", text: "Great. I am your AI virtual assistant. How can I help you today?" },
 
+    { from: "stop", text: "" },
+
     { from: "bot", text: "Processing that request…" },
 
-    { from: "bot", text: "Let me connect you with a live customer agent. Please wait…" },
+    { from: "bot", text: "Let me connect with a live customer agent. Please wait…" },
+
+    { from: "stop", text: "" },
 
     { from: "bot", text: "Thank you for waiting. None of our agents are currently available. 😐" },
 
@@ -48,5 +52,5 @@ export const chatScript = [
         options: ["Yes", "No"]
     },
 
-    { from: "bot", text: "Okay, bye! 😏" }
+    { from: "bot", text: "Okay, have a lovely day. Bye! 😏" }
 ];  
