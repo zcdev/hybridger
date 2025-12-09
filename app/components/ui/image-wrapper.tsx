@@ -5,8 +5,8 @@ export default function ImageWrapper({
     src,
     srcDark,
     alt,
-    width,
-    height,
+    width = 100,
+    height = 100,
     className
 }: ImageWrapperProps) {
     return (
@@ -27,6 +27,7 @@ export default function ImageWrapper({
                     width={width}
                     height={height}
                     className={className}
+                    fetchpriority="high"
                     priority
                 />
             </picture>

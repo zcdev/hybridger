@@ -13,9 +13,9 @@ export default async function Page() {
     <>
       <Header />
       <HeroSection />
-      <hr className="border-t-1 border-gray-300" />
+      <hr className="border-t-1 border-gray-400" />
       <Features />
-      <hr className="border-t-1 border-gray-300" />
+      <hr className="border-t-1 border-gray-400" />
       <Prices />
       <Testimonials />
       <Footer />
