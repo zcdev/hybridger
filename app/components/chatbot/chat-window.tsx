@@ -54,9 +54,9 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     function handleUserResponse(userText: string) {
         setMessages(prev => [...prev, { from: "user", text: userText }]);
         setIsThinking(true);
+        setStep(prev => prev + 1);
         setTimeout(() => {
             setIsThinking(false);
-            setStep(prev => prev + 1);
         }, 2500);
     }
 
