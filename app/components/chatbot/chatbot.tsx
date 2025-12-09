@@ -16,7 +16,7 @@ export default function Chatbot() {
                         onClick={() => setOpen(true)}
                         className="rounded-full px-2 py-3 bg-indigo-600 text-white shadow-lg w-[70px] h-[70px]"
                     >
-                        <ImageWrapper src="https://images.ctfassets.net/nxqkiyet73hh/4uYmMHR9hFtGEkd2z74OBn/853465e75a4b20499d6ef7f689a1f7d0/hybridger-chatbot.png" alt="Chatbot" width={47} height={47} />
+                        <ImageWrapper src="https://images.ctfassets.net/nxqkiyet73hh/4uYmMHR9hFtGEkd2z74OBn/74df222ff6bfa20260f9b81a2f62e046/hybridger-chatbot.webp" alt="Chatbot" width={47} height={47} />
                     </button>
                     <p className="text-sm text-center text-indigo-600 font-semibold m-1 ">Chat now</p>
                 </div>

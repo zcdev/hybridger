@@ -11,7 +11,7 @@ function HeroPreview({
     return (
         <section>
             <div className="mb-5 md:mb-12">
-                <ImageWrapper src={imageAsset.url} width={1112} height={450} className="hero" />
+                <ImageWrapper src={imageAsset.url} width={744} height={301} className="hero" />
             </div>
             <div className="text-xl md:text-2xl text-gray-600 mb-12 md:mb-20">
                 <h3 className="text-2xl md:text-3xl leading-tight text-indigo-700 mb-4">
