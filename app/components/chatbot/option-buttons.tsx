@@ -1,4 +1,4 @@
-import { OptionButtonsProps } from "@/lib/types";
+import { OptionButtonsProps } from "./types";
 
 export default function OptionButtons({ current, onClick }: OptionButtonsProps) {
 
