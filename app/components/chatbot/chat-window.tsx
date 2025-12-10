@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Message, ChatWindowProps } from "@/lib/types";
+import { Message, ChatWindowProps } from "./types";
 import ChatHeader from "./chat-header";
-import Messages from "./messages";
+import Messages from "./message-list";
 import ChatInput from "./chat-input";
 import OptionButtons from "./option-buttons";
-import { chatScript } from "@/lib/chatscript";
+import { chatScript } from "@/app/components/chatbot/chatscript";
 
 export default function ChatWindow({ onClose }: ChatWindowProps) {
 

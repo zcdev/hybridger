@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { MessagesProps } from "@/lib/types";
+import { MessagesProps } from "./types";
 import MessageBubble from "./message-bubble";
 import ThinkingBubble from "./thinking-bubble";
 

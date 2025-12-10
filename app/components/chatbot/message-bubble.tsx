@@ -1,4 +1,4 @@
-import { Message } from "../../../lib/types";
+import { Message } from "./types";
 
 export default function MessageBubble({ from, text }: Message) {
     const isBot = from === "bot";

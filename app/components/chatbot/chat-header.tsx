@@ -1,4 +1,4 @@
-import { ChatHeaderProps } from "@/lib/types";
+import { ChatHeaderProps } from "./types";
 
 export default function ChatHeader({ onClose }: ChatHeaderProps) {
     return (

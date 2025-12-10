@@ -1,4 +1,4 @@
-import { ChatInputProps } from "@/lib/types";
+import { ChatInputProps } from "./types";
 
 export default function ChatInput({ onSubmit, input, setInput }: ChatInputProps) {
 
