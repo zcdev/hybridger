@@ -27,7 +27,7 @@ export default function ImageWrapper({
                     width={width}
                     height={height}
                     className={className}
-                    fetchpriority="high"
+                    fetchPriority="high"
                     priority
                 />
             </picture>

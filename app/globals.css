@@ -74,6 +74,13 @@ img {
     height: 50px;
 }
 
+.chatbot img {
+    margin: auto;
+    width: 56px;
+    height: auto;
+    padding-right: 4px;
+}
+
 @keyframes slider {
     0%  { transform: translateY(240px); }
     10% { opacity: 1; transform: translateY(240px); }

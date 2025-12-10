@@ -7,18 +7,18 @@ export default function Chatbot() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-0 md:bottom-5 right-0 md:right-5 z-50 dark:text-white">
+        <div className="fixed bottom-0 md:bottom-5 right-0 md:right-6 z-50 dark:text-white">
             {open ? (
                 <ChatWindow onClose={() => setOpen(false)} />
             ) : (
-                <div className="px-5 md:px-2">
+                <div className="chatbot mb-2 md:mb-0 mr-3 md:mr-0">
                     <button
                         onClick={() => setOpen(true)}
-                        className="rounded-full px-2 py-3 bg-indigo-600 text-white shadow-lg w-[70px] h-[70px]"
+                        className="rounded-full bg-indigo-600 text-white shadow-lg w-[70px] h-[70px]"
                     >
-                        <ImageWrapper src="https://images.ctfassets.net/nxqkiyet73hh/4uYmMHR9hFtGEkd2z74OBn/74df222ff6bfa20260f9b81a2f62e046/hybridger-chatbot.webp" alt="Chatbot" width={47} height={47} />
+                        <ImageWrapper src="https://images.ctfassets.net/nxqkiyet73hh/4uYmMHR9hFtGEkd2z74OBn/74df222ff6bfa20260f9b81a2f62e046/hybridger-chatbot.webp" alt="Chatbot" width={50} height={50} />
                     </button>
-                    <p className="text-sm text-center text-indigo-600 font-semibold m-1 ">Chat now</p>
+                    <p className="text-sm text-center text-indigo-600 font-semibold">Chat now</p>
                 </div>
             )}
         </div>
