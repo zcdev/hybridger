@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 .features p {
     margin-top: 1rem;
     line-height: 1.25;

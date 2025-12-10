@@ -2,7 +2,7 @@ import Logo from "../ui/logo";
 
 export default function Header() {
     return (
-        <header className="text-left mt-12 mb-12">
+        <header className="text-left mt-4 md:mt-12 mb-12">
             <Logo />
             <h1 className="inline-flex text-6xl tracking-tighter leading-tight pl-2">
                 HyBridger
