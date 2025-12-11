@@ -4,6 +4,7 @@ import ChatHeader from "./chat-header";
 import Messages from "./message-list";
 import ChatInput from "./chat-input";
 import OptionButtons from "./option-buttons";
+import ChatEnd from "./chat-end";
 import { chatScript } from "@/app/components/chatbot/chatscript";
 
 const randomDelay = () => Math.random() * (4000 - 2000) + 2000;
@@ -96,9 +97,9 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
                             <ChatInput input={input} setInput={setInput} onSubmit={handleSubmit} />
                         )}
 
-                        {/* End of chat banner */}
+                        {/* End of chat */}
                         {!isOptionStep && !isInputStep && (
-                            <p className="text-center text-indigo-600 font-bold">Chat ended</p>
+                            <ChatEnd onClose={onClose} />
                         )}
                     </div>
                 </div>
