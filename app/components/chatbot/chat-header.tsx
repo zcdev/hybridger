@@ -1,6 +1,6 @@
-import { ChatHeaderProps } from "./types";
+import { ChatWindowProps } from "./types";
 
-export default function ChatHeader({ onClose }: ChatHeaderProps) {
+export default function ChatHeader({ onClose }: ChatWindowProps) {
     return (
         <div className="p-3 border-b flex justify-between items-center">
             <span className="font-semibold">HyBridger Assistant</span>

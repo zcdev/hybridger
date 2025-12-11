@@ -10,8 +10,8 @@ const Messages = forwardRef<HTMLDivElement, MessagesProps>(({ messages, isThinki
             ref={ref}
             className="flex-1 overflow-y-auto p-3 space-y-2"
         >
-            {messages.map((m: any, i:any) => (
-                <MessageBubble key={i} text={m.text} from={m.from} />
+            {messages.map((message, index) => (
+                <MessageBubble key={index} text={message.text} from={message.from} />
             ))}
             {isThinking && <ThinkingBubble />}
         </div>

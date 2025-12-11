@@ -1,4 +1,6 @@
-export const chatScript = [
+import { Message } from "./types";
+
+export const chatScript: Message[] = [
     { from: "bot", text: "Hi there! Welcome to HyBridger CMS prototype." },
     { from: "bot", text: "Please identify your HyBridger role:" },
     {
@@ -8,13 +10,13 @@ export const chatScript = [
 
     { from: "bot", text: "Great. I am your AI virtual assistant. How can I help you today?" },
 
-    { from: "stop", text: "" },
+    { from: "user-input", text: "" },
 
     { from: "bot", text: "Processing that request…" },
 
     { from: "bot", text: "Let me connect with a live customer agent. Please wait…" },
 
-    { from: "stop", text: "" },
+    { from: "user-input", text: "" },
 
     { from: "bot", text: "Thank you for waiting. None of our agents are currently available. 😐" },
 

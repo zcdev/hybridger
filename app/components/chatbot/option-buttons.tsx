@@ -4,13 +4,13 @@ export default function OptionButtons({ current, onClick }: OptionButtonsProps) 
 
     return (
         <div className="p-3 space-y-2">
-            {current.options.map((opt: string) => (
+            {current?.options?.map((option: string) => (
                 <button
-                    key={opt}
-                    onClick={() => onClick(opt)}
+                    key={option}
+                    onClick={() => onClick(option)}
                     className="w-full text-left px-3 py-2 rounded bg-indigo-600 text-white"
                 >
-                    {opt}
+                    {option}
                 </button>
             ))}
         </div>
