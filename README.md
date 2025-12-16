@@ -39,6 +39,8 @@ HyBridger — Headless CMS + Landing Page + Demo Chatbot: [https://hybridger.ver
 
 ## 📚 What I Learned
 
+**HyBridger** came with plenty of learning moments. I’ve captured them in more detail here: [What I Learned From Building HyBridger](https://zoechang.dev/blog/what-i-learned-from-building-hybridger)
+
 ## ⚡ Local Development
 
 ```
