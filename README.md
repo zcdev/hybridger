@@ -3,7 +3,7 @@
 [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?logo=next.js)](https://nextjs.org/)
 [![React.js](https://img.shields.io/badge/React.js-61DAFB?logo=react\&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript\&logoColor=white)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css\&logoColor=white)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css\&logoColor=white)](https://tailwindcss.com/)
 [![Contentful CMS](https://img.shields.io/badge/Contentful%20CMS-0055FF?logo=contentful\&logoColor=white)](https://contentful.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel\&logoColor=white)](https://vercel.com/)
 
@@ -12,7 +12,7 @@ HyBridger — Headless CMS + Landing Page + Demo Chatbot: [https://hybridger.ver
 
 ## 📖 Overview
 
-**Deliverable:** A modern, design-forward headless CMS project built with Next.js, Contentful, TypeScript, and TailwindCSS.
+**Deliverable:** A modern, design-forward headless CMS project built with Next.js, Contentful, TypeScript, and Tailwind CSS.
 
 **Purpose:** Showcasing content modeling, GraphQL querying, dynamic page rendering, optimized image delivery, and a custom scripted chatbot UI for demo purposes.
 
@@ -21,7 +21,7 @@ HyBridger — Headless CMS + Landing Page + Demo Chatbot: [https://hybridger.ver
 - Next.js 14+ (App Router)
 - React Server & Client Components
 - TypeScript
-- TailwindCSS
+- Tailwind CSS
 - Contentful CMS (GraphQL API)
 - Vercel Deployment
 
