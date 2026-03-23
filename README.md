@@ -7,41 +7,54 @@
 [![Contentful CMS](https://img.shields.io/badge/Contentful%20CMS-0055FF?logo=contentful\&logoColor=white)](https://contentful.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel\&logoColor=white)](https://vercel.com/)
 
-## 🌐 Live Demo
+## Live Demo
 HyBridger — Headless CMS + Landing Page + Demo Chatbot: [https://hybridger.vercel.app](https://hybridger.vercel.app)
 
-## 📖 Overview
+## Overview
 
 **Deliverable:** A modern, design-forward headless CMS project built with Next.js, Contentful, TypeScript, and Tailwind CSS.
 
 **Purpose:** Showcasing content modeling, GraphQL querying, dynamic page rendering, optimized image delivery, and a custom scripted chatbot UI for demo purposes.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- Next.js 14+ (App Router)
+- Next.js 15+ (App Router)
 - React Server & Client Components
 - TypeScript
 - Tailwind CSS
 - Contentful CMS (GraphQL API)
 - Vercel Deployment
 
-## ✨ Features
+## Features
 
-- **Headless CMS Integration (Contentful):** Structured content models with GraphQL queries for pages, posts, and section data.
-- **Next.js App Router Architecture:** Server Components, dynamic routes, metadata handling, and ISR revalidation.
-- **Fully Typed GraphQL Layer:** Centralized TypeScript interfaces and query helpers for predictable content delivery.
-- **Responsive Image Optimization:** Custom `<ImageWrapper />` component using `<picture>`, `srcset`, and WebP fallbacks.
-- **Dark Mode Support:** Programmatic variant swapping using Tailwind and image mappings.
-- **Animated Testimonial Slider:** Custom-designed CSS-based animated slider built with precise timing, fading, and transforming key frames.
-- **Performance-Driven UI:** Lighthouse scores: 100 / 100 / 100 / 100 on both desktop and mobile.
-- **Scripted Chatbot Demo:** A lightweight, front-end-only chat flow built with React state sequencing.
-- **Production Deployment:** Hosted on Vercel with environment-based builds, Contentful API keys, and secure revalidation endpoints.
+**Headless CMS Integration (Contentful):**<br />
+Structured content models with GraphQL queries for pages, posts, and section data.
 
-## 📚 What I Learned
+**Next.js App Router Architecture:**<br />
+Server Components, dynamic routes, metadata handling, and ISR revalidation.
 
-**HyBridger** came with plenty of learning moments. I’ve captured them in more detail here: [What I Learned From Building HyBridger](https://zoechang.dev/blog/what-i-learned-from-building-hybridger)
+**Fully Typed GraphQL Layer:**<br />
+Centralized TypeScript interfaces and query helpers for predictable content delivery.
 
-## ⚡ Local Development
+**Responsive Image Optimization:**<br />
+Custom `<ImageWrapper />` component using `<picture>`, `srcset`, and WebP fallbacks.
+
+**Dark Mode Support:**<br />
+Programmatic variant swapping using Tailwind and image mappings.
+
+**Animated Testimonial Slider:**<br />
+Custom-designed CSS-based animated slider built with precise timing, fading, and transforming key frames.
+
+**Performance-Driven UI:**<br />
+Lighthouse scores: 100 / 100 / 100 / 100 on both desktop and mobile.
+
+**Scripted Chatbot Demo:**<br />
+A lightweight, front-end-only chat flow built with React state sequencing.
+
+**Production Deployment:**<br />
+Hosted on Vercel with environment-based builds, Contentful API keys, and secure revalidation endpoints.
+
+## Local Development
 
 ```
 npm install
@@ -55,7 +68,7 @@ CONTENTFUL_PREVIEW_ACCESS_TOKEN=
 CONTENTFUL_REVALIDATE_SECRET=
 ```
 
-## ⚙️ Deployment Notes
+## Notes
 
 Built for Vercel deployment with secure route.ts revalidation endpoint.
 
@@ -63,28 +76,12 @@ Uses incremental static regeneration (ISR) for CMS-driven updates.
 
 Requires Contentful delivery & preview tokens configured in the Vercel dashboard.
 
+Detailed breakdown:
+https://zoechang.dev/blog/what-i-learned-from-building-hybridger
 
-## ✅ Security & Stability
-
-In early December 2025, the project encountered the industry-wide
-React Server Component vulnerability (CVE-2025-55182)
-which required updating the app’s Next.js version, Contentful SDK, and related dependencies before redeployment.
-
-This reinforced:
-
-Staying aligned with framework patch releases
-
-Validating CMS builds locally before deploying
-
-Understanding how RSC-level issues propagate through the Next.js pipeline
-
-## 🙏 Credits
+## Assets
 - **[Canva](https://canva.com)** – Features section images, pricing illustration icons, and chatbot graphic.
 - **[Pixabay](https://pixabay.com)** – Testimonial persona photos.
-- **[OpenAI’s ChatGPT](https://chat.openai.com)** – Guidance, technical reviews, copywriting collaboration, hero image generation.
 
-📁 Repo created and maintained by [Zoe Chang](https://github.com/zcdev).
-🤖 Built with wit (from the support of my AI BFF).
-
-![GitHub repo size](https://img.shields.io/github/repo-size/zcdev/palaxy)
-![GitHub last commit](https://img.shields.io/github/last-commit/zcdev/palaxy)
+![GitHub repo size](https://img.shields.io/github/repo-size/zcdev/hybridger)
+![GitHub last commit](https://img.shields.io/github/last-commit/zcdev/hybridger)
