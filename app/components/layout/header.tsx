@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="text-left mt-4 md:mt-12 mb-12">
             <Logo />
-            <h1 className="inline-flex text-6xl tracking-tighter leading-tight pl-4">
+            <h1 className="inline-flex text-4xl sm:text-5xl md:text-6xl tracking-tighter leading-tight pl-4">
                 HyBridger
             </h1>
             <h2 className="text-3xl text-indigo-700 mt-4">
